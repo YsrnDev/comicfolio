@@ -1,6 +1,6 @@
 import { Project, Experience, Message, Skill, TechGadget } from '../types';
 
-const API_URL = `http://${window.location.hostname}:4000/api`;
+const API_URL = `${window.location.protocol}//${window.location.hostname}:4000/api`;
 
 const fetchWithAuth = async (url: string, options: RequestInit = {}) => {
     const response = await fetch(`${API_URL}${url}`, {
