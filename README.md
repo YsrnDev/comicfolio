@@ -121,4 +121,4 @@ To access **Mission Control**:
 2. Default (if seeded) or Sign Up using the form.
 
 ---
-*Built with 💥 by [Your Name]*
+*Built with ❤️ by YsrnDev*

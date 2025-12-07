@@ -7,6 +7,65 @@ db.pragma('journal_mode = WAL');
 
 // Initialize Database Schema
 const initDB = () => {
+  // User Table (Better Auth)
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS user (
+      id TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT NOT NULL UNIQUE,
+      emailVerified INTEGER NOT NULL,
+      image TEXT,
+      createdAt INTEGER NOT NULL,
+      updatedAt INTEGER NOT NULL
+    )
+  `);
+
+  // Session Table (Better Auth)
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS session (
+      id TEXT PRIMARY KEY,
+      expiresAt INTEGER NOT NULL,
+      token TEXT NOT NULL,
+      createdAt INTEGER NOT NULL,
+      updatedAt INTEGER NOT NULL,
+      ipAddress TEXT,
+      userAgent TEXT,
+      userId TEXT NOT NULL,
+      FOREIGN KEY (userId) REFERENCES user(id) ON DELETE CASCADE
+    )
+  `);
+
+  // Account Table (Better Auth)
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS account (
+      id TEXT PRIMARY KEY,
+      accountId TEXT NOT NULL,
+      providerId TEXT NOT NULL,
+      userId TEXT NOT NULL,
+      accessToken TEXT,
+      refreshToken TEXT,
+      accessTokenExpiresAt INTEGER,
+      refreshTokenExpiresAt INTEGER,
+      password TEXT,
+      scope TEXT,
+      createdAt INTEGER NOT NULL,
+      updatedAt INTEGER NOT NULL,
+      FOREIGN KEY (userId) REFERENCES user(id) ON DELETE CASCADE
+    )
+  `);
+
+  // Verification Table (Better Auth)
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS verification (
+      id TEXT PRIMARY KEY,
+      identifier TEXT NOT NULL,
+      value TEXT NOT NULL,
+      expiresAt INTEGER NOT NULL,
+      createdAt INTEGER NOT NULL,
+      updatedAt INTEGER NOT NULL
+    )
+  `);
+
   // Projects Table
   db.exec(`
     CREATE TABLE IF NOT EXISTS projects (
