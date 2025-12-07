@@ -2,8 +2,6 @@
 
 **Comicfolio** is a dynamic, comic-book themed developer portfolio built for those who want to showcase their work with style. It features a high-performance React frontend and a robust Hono/SQLite backend for full content management.
 
-![Comicfolio Preview](https://picsum.photos/1200/630?random=hero)
-
 ## 🚀 Features
 
 ### 🎨 Public Portfolio
@@ -51,7 +49,7 @@
 
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/comicfolio.git
+    git clone https://github.com/YsrnDev/comicfolio.git
     cd comicfolio
     ```
 
