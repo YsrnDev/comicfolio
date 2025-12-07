@@ -19,7 +19,9 @@ app.use('/api/*', cors({
         'http://localhost:3000',
         'http://192.168.100.50:4173',
         'http://192.168.100.50:3000',
-        'https://portfolio.ysrn.xyz'
+        'http://10.5.1.25:3000',
+        'https://portfolio.ysrn.xyz',
+        'http://portfolio.ysrn.xyz'
     ],
     allowHeaders: ['Content-Type', 'Authorization'],
     allowMethods: ['POST', 'GET', 'OPTIONS', 'DELETE', 'PATCH', 'PUT'],
