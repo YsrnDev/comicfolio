@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Dev | Comicfolio</title>
+    <meta name="description" content="A comic-book style developer portfolio featuring interactive missions, power levels, and signaling devices." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://comicfolio.dev/" />
+    <meta property="og:title" content="Hero Dev | Comicfolio" />
+    <meta property="og:description" content="A comic-book style developer portfolio." />
+    <meta property="og:image" content="https://picsum.photos/1200/630?random=hero" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://comicfolio.dev/" />
+    <meta property="twitter:title" content="Hero Dev | Comicfolio" />
+    <meta property="twitter:description" content="A comic-book style developer portfolio." />
+    <meta property="twitter:image" content="https://picsum.photos/1200/630?random=hero" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Space Grotesk', sans-serif;
+        background-color: #0f172a; /* Slate 900 */
+      }
+      h1, h2, h3, h4, .comic-font {
+        font-family: 'Bangers', cursive;
+        letter-spacing: 0.05em;
+      }
+      .marker-font {
+        font-family: 'Permanent Marker', cursive;
+      }
+      
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1e293b; 
+        border-left: 2px solid black;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #facc15; 
+        border: 2px solid black;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #eab308; 
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              comic: {
+                dark: '#0f172a', // Slate 900
+                panel: '#1e293b', // Slate 800
+                accent: '#facc15', // Yellow 400
+                secondary: '#22d3ee', // Cyan 400
+                alert: '#f472b6', // Pink 400
+                ink: '#000000',
+              }
+            },
+            boxShadow: {
+              'comic': '6px 6px 0px 0px #000',
+              'comic-hover': '3px 3px 0px 0px #000',
+              'comic-light': '6px 6px 0px 0px #fff',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-comic-dark text-white overflow-x-hidden">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
